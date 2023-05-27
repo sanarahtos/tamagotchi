@@ -1,14 +1,14 @@
-public class Puppy
+public class Pet
 {
-    private PuppyState state;
+    private PetState state;
     private int numFeeds;
     private int numPlays;
 
     /**
      * Puppy constructor
      */
-    public Puppy(){
-        state = new AsleepState();
+    public Pet(){
+        state = new SleepState();
         numFeeds = 0;
         numPlays = 0;
     }
@@ -17,7 +17,7 @@ public class Puppy
      * set State of puppy
      * @param s state of puppy
      */
-    public void setState(PuppyState s){
+    public void setState(PetState s){
         this.state = s;
     }
 

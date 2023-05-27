@@ -1,4 +1,4 @@
-public class PlayState implements PuppyState
+public class PlayState implements PetState
 {
     /**
      * puppy continues to play until tired
@@ -6,11 +6,11 @@ public class PlayState implements PuppyState
      * @return string description of puppy playing
      */
     @Override
-    public String play(Puppy p){
+    public String play(Pet p){
         p.setState(new PlayState());
         if (p.incPlays() >= 2){
             p.reset();
-            p.setState(new AsleepState());
+            p.setState(new SleepState());
             return "You throw the ball again and the puppy excitedly chases it." +
                     "\nThe puppy played so much it fell asleep.";
         }
@@ -22,8 +22,8 @@ public class PlayState implements PuppyState
      * @param p puppy variable
      * @return string description of puppy eating
      */
-    public String feed(Puppy p){
-        p.setState(new EatingState());
+    public String feed(Pet p){
+        p.setState(new EatState());
         return "The puppy stops playing and comes running to eat.";
     }
 }

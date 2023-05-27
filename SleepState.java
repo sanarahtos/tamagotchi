@@ -1,4 +1,4 @@
-public class AsleepState implements PuppyState
+public class SleepState implements PetState
 {
     /**
      * puppy is still asleep is user wants to play with puppy
@@ -6,7 +6,7 @@ public class AsleepState implements PuppyState
      * @return string that says puppy is asleep
      */
     @Override
-    public String play(Puppy p){
+    public String play(Pet p){
         return "The puppy is asleep. It doesn't want to play right now.";
     }
 
@@ -16,8 +16,8 @@ public class AsleepState implements PuppyState
      * @return string description of puppy waking up to eat
      */
     @Override
-    public String feed(Puppy p){
-        p.setState(new EatingState());
+    public String feed(Pet p){
+        p.setState(new EatState());
         return "The puppy wakes up and comes running to eat.";
     }
 }
