@@ -1,0 +1,31 @@
+public class EatingState implements PuppyState
+{
+    /**
+     * puppy state of playing until tired
+     * @param p puppy variable
+     * @return string description of puppy playing
+     */
+    @Override
+    public String play(Puppy p){
+        p.setState(new PlayState());
+        return "The puppy looks up from its food and chases the ball you threw.";
+    }
+
+    /**
+     * puppy eats after playing
+     * @param p puppy variable
+     * @return string description of puppy eating
+     */
+    @Override
+    public String feed(Puppy p){
+        if (p.incFeeds() >= 2){
+            p.reset();
+            p.setState(new AsleepState());
+            return "The puppy continues to eat as you add another scoop of kibble to " +
+                    "its bowl. \nThe puppy ate so much it fell asleep!";
+        }
+        p.setState(new EatingState());
+        return "The puppy continues to eat as you add another scoop of kibble to " +
+                "its bowl.";
+    }
+}

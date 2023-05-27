@@ -1,0 +1,16 @@
+public interface PuppyState
+{
+    /**
+     * puppy play state
+     * @param p puppy variable
+     * @return string description of puppy playing
+     */
+    String play(Puppy p);
+
+    /**
+     * puppy eating state
+     * @param p puppy variable
+     * @return string description of puppy eating
+     */
+    String feed(Puppy p);
+}
