@@ -1,6 +1,7 @@
 public class Pet
 {
     private PetState state;
+    public String petName;
     private int numFeeds;
     private int numPlays;
 
@@ -9,6 +10,7 @@ public class Pet
      */
     public Pet(){
         state = new SleepState();
+        petName = "";
         numFeeds = 0;
         numPlays = 0;
     }

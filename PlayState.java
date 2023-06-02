@@ -11,10 +11,10 @@ public class PlayState implements PetState
         if (p.incPlays() >= 2){
             p.reset();
             p.setState(new SleepState());
-            return "You throw the ball again and the puppy excitedly chases it." +
-                    "\nThe puppy played so much it fell asleep.";
+            return "You throw the ball again and " + p.petName + " excitedly chases it.\n" 
+            + p.petName + " played so much they fell asleep!";
         }
-        return "You throw the ball again and the puppy excitedly chases it.";
+        return "You throw the ball again and " + p.petName + " excitedly chases it.";
     }
 
     /**
@@ -24,6 +24,6 @@ public class PlayState implements PetState
      */
     public String feed(Pet p){
         p.setState(new EatState());
-        return "The puppy stops playing and comes running to eat.";
+        return p.petName + " stops playing and comes running to eat.";
     }
 }

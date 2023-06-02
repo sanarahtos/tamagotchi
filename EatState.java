@@ -8,7 +8,7 @@ public class EatState implements PetState
     @Override
     public String play(Pet p){
         p.setState(new PlayState());
-        return "The puppy looks up from its food and chases the ball you threw.";
+        return p.petName + " looks up from their food and chases the ball you threw.";
     }
 
     /**
@@ -21,11 +21,11 @@ public class EatState implements PetState
         if (p.incFeeds() >= 2){
             p.reset();
             p.setState(new SleepState());
-            return "The puppy continues to eat as you add another scoop of kibble to " +
-                    "its bowl. \nThe puppy ate so much it fell asleep!";
+            return p.petName + " continues to eat as you add another scoop of kibble to " +
+                    "their bowl.\n" + p.petName + " ate so much they fell asleep!";
         }
         p.setState(new EatState());
-        return "The puppy continues to eat as you add another scoop of kibble to " +
-                "its bowl.";
+        return p.petName + " continues to eat as you add another scoop of kibble to " +
+                "their bowl.";
     }
 }

@@ -7,7 +7,7 @@ public class SleepState implements PetState
      */
     @Override
     public String play(Pet p){
-        return "The puppy is asleep. It doesn't want to play right now.";
+        return p.petName + " is asleep. They don't want to play right now.";
     }
 
     /**
@@ -18,6 +18,6 @@ public class SleepState implements PetState
     @Override
     public String feed(Pet p){
         p.setState(new EatState());
-        return "The puppy wakes up and comes running to eat.";
+        return p.petName + " wakes up and comes running to eat.";
     }
 }

@@ -7,7 +7,7 @@ public class MainMenu
         int choice;
 
         System.out.println("Congratulations on your new pet! \nWhat would you like to name them?");
-        petName = CheckInput.getString();
+        p.petName = CheckInput.getString();
 
         while ((choice = menuOpt()) != 3){
             if(choice == 1){
