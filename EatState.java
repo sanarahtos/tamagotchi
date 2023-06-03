@@ -18,8 +18,8 @@ public class EatState implements PetState
      */
     @Override
     public String feed(Pet p){
-        if (p.incFeeds() >= 2){
-            p.reset();
+        if (p.numFeeds > 3){
+            //p.reset();
             p.setState(new SleepState());
             return p.petName + " continues to eat as you add another scoop of kibble to " +
                     "their bowl.\n" + p.petName + " ate so much they fell asleep!";

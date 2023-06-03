@@ -8,8 +8,8 @@ public class PlayState implements PetState
     @Override
     public String play(Pet p){
         p.setState(new PlayState());
-        if (p.incPlays() >= 2){
-            p.reset();
+        if (p.numPlays > 3){
+            //p.reset();
             p.setState(new SleepState());
             return "You throw the ball again and " + p.petName + " excitedly chases it.\n" 
             + p.petName + " played so much they fell asleep!";

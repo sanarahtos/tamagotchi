@@ -2,8 +2,10 @@ public class Pet
 {
     private PetState state;
     public String petName;
-    private int numFeeds;
-    private int numPlays;
+    public int numFeeds;
+    public int numPlays;
+    private boolean hungry;
+    private boolean bored;
 
     /**
      * Puppy constructor
@@ -13,6 +15,8 @@ public class Pet
         petName = "";
         numFeeds = 0;
         numPlays = 0;
+        hungry = true;
+        bored = true;
     }
 
     /**
@@ -55,6 +59,22 @@ public class Pet
     public int incPlays(){
         numPlays++;
         return numPlays;
+    }
+
+    /**
+     * true if pet is hungry 
+     * (incFeeds % 3 != 0)
+     * @return hungry bool
+     */
+    public boolean isHungry(){
+        int feedsCount = numFeeds;
+        if (feedsCount % 3 == 0){
+            hungry = false;
+        }
+        else{
+            hungry = true;
+        }
+        return hungry;
     }
 
     /**
